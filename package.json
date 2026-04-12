@@ -13,6 +13,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.5",
-    "vite": "^8.0.4"
+    "glob": "^13.0.6",
+    "less": "^4.6.4",
+    "vite": "^8.0.4",
+    "vite-plugin-handlebars": "^2.0.0",
+    "vite-plugin-purgecss": "^0.2.13"
   }
 }
