@@ -1,16 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taruma Arquitectos</title>
-  </head>
-  <body>
-    {{> header}}
-    <main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARUMA ARQUITECTOS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/styles/main.less">
+</head>
+<body>
 
-    </main>
-    {{> footer}}
-  </body>
+<header>
+    <a href="index.html" class="logo">
+        <img src="/IMAGENES/LOGO.jpg" alt="Logo TARUMA">
+    </a>
+    <div class="header-inner">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Quiénes Somos</a></li>
+                <li><a href="portfolio.html">Portafolio</a></li>
+                <li><a href="processes.html">Procesos</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="projects.html">Proyectos Destacados</a></li>
+                <li><a href="gallery.html">Galería</a></li>
+                <li><a href="blog.html">Blog/Noticias</a></li>
+                <li><a href="contact.html">Contactos</a></li>
+                <li><a href="quotations.html">Cotizaciones</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content container">
+        <h2>Despacho especializado en diseño arquitectónico</h2>
+    </div>
+</section>
+
+<section class="carousel-section">
+    <div class="container">
+        <h3>Proyectos destacados</h3>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/IMAGENES/proyecto1.jpg" alt="Plaza Serrano"></div>
+                <div class="swiper-slide"><img src="/IMAGENES/proyecto2.jpg" alt="Proyecto 2"></div>
+                <div class="swiper-slide"><img src="/IMAGENES/proyecto3.jpg" alt="Cafeteria"></div>
+                <div class="swiper-slide"><img src="/IMAGENES/Cabañas The Rubra4.png" alt="Cabañas the Rubra"></div>
+                <div class="swiper-slide"><img src="/IMAGENES/Complejo Deportivo1.png" alt="Complejo Deportivo"></div>
+                <div class="swiper-slide"><img src="/IMAGENES/Complejo Habitacional Lipidario2.png" alt="Complejo Habitacional Lipidario"></div>
+                <div class="swiper-slide"><img src="/IMAGENES/Complejo Turistico Colonial1.png" alt="Complejo Turistico Colonial"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<section id="nosotros" class="section">
+    <div class="container">
+        <h3>Quiénes Somos</h3>
+        <p>Somos un despacho de arquitectura comprometido con la excelencia en el diseño, la funcionalidad y la sostenibilidad. Nuestro enfoque combina creatividad, técnica y sensibilidad al entorno.</p>
+        <p>Con más de una década de experiencia, hemos desarrollado proyectos residenciales, comerciales y urbanos que reflejan nuestra pasión por la arquitectura contemporánea y responsable.</p>
+    </div>
+</section>
+
+<section id="servicios" class="section">
+    <div class="container">
+        <h3>Servicios principales</h3>
+        <div class="service-links">
+            <a href="#">Servicio de Diseño</a>
+            <a href="#">Construcción y Remodelación</a>
+            <a href="#">Planeación y Gestión de Proyectos</a>
+            <a href="#">Desarrollo Urbano y Paisajismo</a>
+        </div>
+    </div>
+</section>
+
+<section id="noticias" class="section">
+    <div class="container">
+        <h3>Noticias y Eventos</h3>
+        <ul class="news-list">
+            <li><strong>Enero 2025:</strong> Fundación Oficial de Taruma Arquitectos.</li>
+            <li><strong>Marzo 2025:</strong> Taruma Finaliza su Primer Proyecto.</li>
+            <li><strong>Diciembre 2025:</strong> Se busca la expansion de Taruma.</li>
+        </ul>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© TARUMA ARQUITECTOS. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module">
+    new Swiper('.swiper', {
+        loop: true,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        autoplay: { delay: 3000 }
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('main-nav');
+    hamburger?.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+    });
+</script>
+</body>
 </html>
