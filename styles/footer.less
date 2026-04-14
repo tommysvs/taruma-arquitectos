@@ -19,23 +19,24 @@ footer, .site-footer {
 .footer-block {
     min-width: 200px;
     text-align: left;
-}
 
-.footer-block h3 {
-    margin-bottom: 10px;
-    color: @white;
-}
+    h2,
+    h3 {
+        margin-bottom: 10px;
+        color: @white;
+    }
 
-.footer-block a {
-    display: block;
-    color: @accent-color;
-    text-decoration: none;
-    margin-bottom: 8px;
-    transition: color @transition;
-}
+    a {
+        display: block;
+        color: @accent-color;
+        text-decoration: none;
+        margin-bottom: 8px;
+        transition: color @transition;
 
-.footer-block a:hover {
-    color: lighten(@accent-color, 10%);
+        &:hover {
+            color: lighten(@accent-color, 10%);
+        }
+    }
 }
 
 .footer-copy {
