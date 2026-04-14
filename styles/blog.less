@@ -1,22 +1,5 @@
 @import "variables.less";
-@import "header.less";
-@import "footer.less";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: @font-family-base;
-    background: url('/IMAGENES/blogfondo.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: @text-color;
-    line-height: 1.6;
-}
-
-// Contenedor de artículos
 .container-blog {
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +10,6 @@ body {
     margin: 0 auto;
 }
 
-// Artículos
 .article {
     background: rgba(224, 224, 224, 0.95);
     padding: 25px;
@@ -59,7 +41,6 @@ body {
     }
 }
 
-// Comentarios
 .comments-section {
     margin-top: 20px;
     padding-top: 15px;
@@ -118,7 +99,6 @@ body {
     }
 }
 
-// Responsive
 @media (max-width: @mobile) {
     .article {
         width: 100%;
