@@ -3,96 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog/Noticias - TARUMA ARQUITECTOS</title>
-    <link rel="stylesheet" href="/styles/blog.less">
+    <title>TARUMA ARQUITECTOS - Blog/Noticias</title>
+    <link rel="stylesheet" href="/styles/main.less">
 </head>
 <body>
+    {{> header }}
 
-<header>
-    <a href="index.html" class="logo">
-        <img src="/IMAGENES/LOGO.jpg" alt="Logo TARUMA">
-    </a>
-    <div class="header-inner">
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="main-nav" id="main-nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Quiénes Somos</a></li>
-                <li><a href="portfolio.html">Portafolio</a></li>
-                <li><a href="processes.html">Procesos</a></li>
-                <li><a href="services.html">Servicios</a></li>
-                <li><a href="projects.html">Proyectos Destacados</a></li>
-                <li><a href="gallery.html">Galería</a></li>
-                <li><a href="blog.html">Blog/Noticias</a></li>
-                <li><a href="contact.html">Contactos</a></li>
-                <li><a href="quotations.html">Cotizaciones</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="gallery-title">
-        <h1>Blog/Noticias</h1>
-    </div>
-</header>
+    {{> blog }}
 
-<div class="container-blog">
-    <div class="article">
-        <span class="category">Tendencias Arquitectónicas</span>
-        <h2>Las nuevas líneas del diseño contemporáneo en Latinoamérica</h2>
-        <p><strong>Autor:</strong> Carlos Medina | <strong>Fecha:</strong> 15/11/2025</p>
-        <p>El diseño arquitectónico actual en Latinoamérica apuesta por la simplicidad, la eficiencia y la conexión con el entorno. Se priorizan formas limpias, materiales modernos y espacios funcionales que respondan al clima y la cultura local.</p>
-        
-        <div class="comments-section">
-            <h3>Comentarios</h3>
-            <div id="comments1"></div>
-            <input type="text" id="commentInput1" placeholder="Escribe un comentario...">
-            <button onclick="addComment(1)">Enviar</button>
-        </div>
-    </div>
+    {{> footer }}
 
-    <div class="article">
-        <span class="category">Sostenibilidad</span>
-        <h2>Estrategias para construir espacios más eficientes</h2>
-        <p><strong>Autor:</strong> Andrea Fúnez | <strong>Fecha:</strong> 09/11/2025</p>
-        <p>La sostenibilidad se ha convertido en un pilar fundamental de la arquitectura moderna. El uso de iluminación natural, ventilación cruzada, materiales ecológicos y sistemas de ahorro energético permite construir de manera responsable y eficiente.</p>
-        
-        <div class="comments-section">
-            <h3>Comentarios</h3>
-            <div id="comments2"></div>
-            <input type="text" id="commentInput2" placeholder="Escribe un comentario...">
-            <button onclick="addComment(2)">Enviar</button>
-        </div>
-    </div>
-</div>
+    <script type="module" src="/js/main.js"></script>
 
-<footer>
-    © 2025 TARUMA ARQUITECTOS | Todos los derechos reservados
-</footer>
-
-<script type="module">
-    function addComment(articleId) {
-        const input = document.getElementById(`commentInput${articleId}`);
-        const commentsDiv = document.getElementById(`comments${articleId}`);
-        
-        if (input.value.trim() !== "") {
-            const newComment = document.createElement("div");
-            newComment.classList.add("comment");
-            newComment.innerText = input.value;
-            commentsDiv.appendChild(newComment);
-            input.value = "";
+    <script type="module">
+        function addComment(articleId) {
+            const input = document.getElementById(`commentInput${articleId}`);
+            const commentsDiv = document.getElementById(`comments${articleId}`);
+            
+            if (input.value.trim() !== "") {
+                const newComment = document.createElement("div");
+                newComment.classList.add("comment");
+                newComment.innerText = input.value;
+                commentsDiv.appendChild(newComment);
+                input.value = "";
+            }
         }
-    }
 
-    window.addComment = addComment;
+        window.addComment = addComment;
 
-    const hamburger = document.getElementById('hamburger');
-    const mainNav = document.getElementById('main-nav');
-    hamburger?.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-    });
-</script>
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('main-nav');
+        hamburger?.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
+
