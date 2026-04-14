@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARUMA ARQUITECTOS - Contacto</title>
+    <link rel="stylesheet" href="styles/contact.less">
+</head>
+<body>
+<div id="contact-app">
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="IMAGENES/LOGO.jpg" alt="Logo TARUMA">
+  </a>
+
+<div class="header-inner">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Quiénes Somos</a></li>
+                <li><a href="portfolio.html">Portafolio</a></li>
+                <li><a href="processes.html">Procesos</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="projects.html">Proyectos Destacados</a></li>
+                <li><a href="gallery.html">Galería</a></li>
+                <li><a href="blog.html">Blog/Noticias</a></li>
+                <li><a href="contact.html" class="active">Contactos</a></li>
+                <li><a href="quotations.html">Cotizaciones</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+</header>
+
+<div class="container">
+
+    <div class="info-box">
+        <h2>Información de Contacto</h2>
+        <p><strong>Dirección:</strong> Tegucigalpa, Honduras</p>
+        <p><strong>Teléfonos:</strong> +504 2233-4455 / +504 9876-1122</p>
+        <p><strong>Email:</strong> contacto@tarumaarquitectos.com</p>
+        <p><strong>Redes Sociales:</strong> Facebook | Instagram | LinkedIn</p>
+        <p><strong>Horarios:</strong> L–V 8:00 AM – 5:00 PM | Sáb 8:00 AM – 12:00 M</p>
+    </div>
+
+    <div class="form-box">
+        <h2>Formulario de Contacto</h2>
+
+        <form @submit.prevent="submitContact" novalidate>
+            <label>
+                Nombre Completo
+                <input type="text" v-model="form.name" placeholder="Nombre Completo" required>
+                <span class="input-error" v-if="errors.name">{{ errors.name }}</span>
+            </label>
+
+            <label>
+                Correo Electrónico
+                <input type="email" v-model="form.email" placeholder="Correo Electrónico" required>
+                <span class="input-error" v-if="errors.email">{{ errors.email }}</span>
+            </label>
+
+            <label>
+                Número de Teléfono
+                <input type="tel" v-model="form.phone" placeholder="Número de Teléfono" required>
+                <span class="input-error" v-if="errors.phone">{{ errors.phone }}</span>
+            </label>
+
+            <label>
+                Motivo de contacto
+                <select v-model="form.reason" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="cotizacion">Solicitar Cotización</option>
+                    <option value="servicios">Consulta sobre Servicios</option>
+                    <option value="cita">Agendar Cita</option>
+                </select>
+                <span class="input-error" v-if="errors.reason">{{ errors.reason }}</span>
+            </label>
+
+            <label>
+                Mensaje
+                <textarea rows="5" v-model="form.message" placeholder="Escriba su mensaje..." required></textarea>
+                <span class="input-error" v-if="errors.message">{{ errors.message }}</span>
+            </label>
+
+            <button type="submit">Enviar</button>
+            <p class="status-message" v-if="status">{{ status }}</p>
+        </form>
+    </div>
+
+    <div class="info-box">
+        <h2>Ubicación</h2>
+        <iframe 
+            src="https://maps.google.com/maps?q=Tegucigalpa&t=&z=13&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 TARUMA ARQUITECTOS | Todos los derechos reservados
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module">
+    new Swiper('.swiper', {
+        loop: true,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        autoplay: { delay: 3000 }
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('main-nav');
+    hamburger?.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>

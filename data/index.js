@@ -20,9 +20,9 @@ const getData = (page)=>{
         case "/blog.html":
             return { }
         case "/contact.html":
-            return { }
+            return { isContact: true }
         case "/quotations.html":
-            return { }
+            return { isQuotations: true }
     }
     return {};
 }

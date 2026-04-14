@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TARUMA ARQUITECTOS - Cotizaciones</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="styles/quotations.less" />
+</head>
+<body>
+<div id="quotations-app">
+  <header>
+    <a href="index.html" class="logo">
+      <img src="IMAGENES/LOGO.jpg" alt="Logo TARUMA">
+    </a>
+
+    <div class="header-inner">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Quiénes Somos</a></li>
+          <li><a href="portfolio.html">Portafolio</a></li>
+          <li><a href="processes.html">Procesos</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="projects.html">Proyectos Destacados</a></li>
+          <li><a href="gallery.html">Galería</a></li>
+          <li><a href="blog.html">Blog/Noticias</a></li>
+          <li><a href="contact.html">Contactos</a></li>
+          <li><a href="quotations.html" class="active">Cotizaciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="form-page">
+        <h1>Solicita tu Cotización</h1>
+        <p class="lead">Completa el formulario y recibe una respuesta personalizada.</p>
+
+        <form class="cotizacion-form" @submit.prevent="submitQuotation" novalidate>
+          <div class="row">
+            <label for="tipo">Tipo de proyecto</label>
+            <select id="tipo" v-model="form.projectType" required>
+              <option value="">Selecciona...</option>
+              <option value="casa">Casa</option>
+              <option value="edificio">Edificio</option>
+              <option value="remodelacion">Remodelación</option>
+            </select>
+            <span class="input-error" v-if="errors.projectType">{{ errors.projectType }}</span>
+          </div>
+
+          <div class="row two-col">
+            <div>
+              <label for="superficie">Superficie aproximada (m²)</label>
+              <input type="number" id="superficie" v-model.number="form.area" placeholder="Ej: 120" min="1" required>
+              <span class="input-error" v-if="errors.area">{{ errors.area }}</span>
+            </div>
+            <div>
+              <label for="presupuesto">Presupuesto estimado</label>
+              <input type="text" id="presupuesto" v-model="form.budget" placeholder="Ej: L50,000" required>
+              <span class="input-error" v-if="errors.budget">{{ errors.budget }}</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" v-model="form.email" placeholder="nombre@ejemplo.com" required>
+            <span class="input-error" v-if="errors.email">{{ errors.email }}</span>
+            <small class="field-note">Se usará para enviarte la confirmación de recepción y para recibir la cotización por este correo.</small>
+          </div>
+
+          <div class="row">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" v-model="form.phone" placeholder="+504 9876-5432" required>
+            <span class="input-error" v-if="errors.phone">{{ errors.phone }}</span>
+          </div>
+
+          <div class="row">
+            <label for="plazos">Plazos deseados</label>
+            <input type="text" id="plazos" v-model="form.deadline" placeholder="Ej: 6 meses" required>
+            <span class="input-error" v-if="errors.deadline">{{ errors.deadline }}</span>
+          </div>
+
+          <div class="row full-width">
+            <label for="description">Descripción del proyecto</label>
+            <textarea id="description" v-model="form.description" rows="5" placeholder="Indica el alcance, tipo de espacio y detalles relevantes." required></textarea>
+            <span class="input-error" v-if="errors.description">{{ errors.description }}</span>
+          </div>
+
+          <div class="row file-field">
+            <label for="imagenes">Adjuntar imágenes del terreno / espacio</label>
+            <input type="file" id="imagenes" multiple accept="image/*" @change="handleFiles">
+            <small class="field-note">Nota: en este demo los archivos NO se adjuntan al correo. Adjúntalos manualmente si los necesitas.</small>
+          </div>
+
+          <div class="row actions">
+            <button type="submit" class="submit-btn">Enviar Cotización</button>
+            <a href="index.html" class="btn-outline">Volver al inicio</a>
+          </div>
+
+          <p class="status-message" v-if="status">{{ status }}</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3>Proceso Posterior al Envío</h3>
+      <p>Una vez recibido tu formulario, nuestro equipo revisará la información y se pondrá en contacto contigo en un plazo máximo de 48 horas hábiles.</p>
+      <p>Se agendará una reunión inicial para definir detalles, requisitos y posibles ajustes del proyecto.</p>
+
+      <h3>Tiempos de Respuesta</h3>
+      <ul>
+        <li>Confirmación de recepción: Inmediata</li>
+        <li>Contacto del arquitecto responsable: Máximo 48 horas hábiles</li>
+        <li>Entrega de cotización preliminar: 5 días hábiles</li>
+      </ul>
+
+      <h3>Requisitos Previos</h3>
+      <ul>
+        <li>Medidas aproximadas del terreno / espacio</li>
+        <li>Documentación de propiedad (si aplica)</li>
+        <li>Referencias o ideas de diseño (opcional)</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© TARUMA ARQUITECTOS. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

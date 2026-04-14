@@ -3,6 +3,7 @@
 header {
     position: relative;
     background: @header-bg;
+    height: 70px;
     color: @white;
     display: flex;
     flex-direction: column;
@@ -11,14 +12,15 @@ header {
 
     .logo {
         position: absolute;
-        top: 0;
+        top: 20px;
         left: 0;
 
         img {
-            height: @logo-size;
+            height: 50px;
             width: @logo-size;
             object-fit: cover;
-            border-radius: 50%;
+
+           
         }
     }
 
@@ -44,10 +46,12 @@ header {
         list-style: none;
         display: flex;
         gap: 15px;
+        padding-top: 20px;
 
         li a {
+            
             color: @white;
-            text-decoration: none;
+            text-decoration:dotted;
             font-weight: 500;
             transition: color @transition;
 

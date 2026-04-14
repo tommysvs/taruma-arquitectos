@@ -7,3 +7,49 @@ footer, .site-footer {
     color: @white;
     margin-top: 30px;
 }
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 20px;
+}
+
+.footer-block {
+    min-width: 200px;
+    text-align: left;
+}
+
+.footer-block h3 {
+    margin-bottom: 10px;
+    color: @white;
+}
+
+.footer-block a {
+    display: block;
+    color: @accent-color;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color @transition;
+}
+
+.footer-block a:hover {
+    color: lighten(@accent-color, 10%);
+}
+
+.footer-copy {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 16px;
+    margin-top: 16px;
+}
+
+@media (max-width: @mobile) {
+    .footer-grid {
+        flex-direction: column;
+    }
+
+    .footer-block {
+        width: 100%;
+    }
+}
