@@ -1,0 +1,37 @@
+<section class="page-hero{{#if heroClass}} {{heroClass}}{{/if}}" aria-labelledby="page-hero-title">
+	<div class="container page-hero-inner">
+		<h1 id="page-hero-title" class="page-hero-title">
+			{{#if heroTitle}}
+				{{heroTitle}}
+			{{else}}
+				Taruma Arquitectos
+			{{/if}}
+		</h1>
+
+		<p class="page-hero-subtitle">
+			{{#if heroSubtitle}}
+				{{heroSubtitle}}
+			{{else}}
+				Diseno arquitectonico, planeacion integral y desarrollo de espacios con identidad.
+			{{/if}}
+		</p>
+
+		{{#if heroShowBreadcrumbs}}
+			<nav class="page-hero-breadcrumbs" aria-label="Navegacion de ruta">
+				<a href="index.html">Inicio</a>
+				<span aria-hidden="true">/</span>
+				<span>
+					{{#if heroBreadcrumbLabel}}
+						{{heroBreadcrumbLabel}}
+					{{else}}
+						{{#if heroTitle}}
+							{{heroTitle}}
+						{{else}}
+							Pagina
+						{{/if}}
+					{{/if}}
+				</span>
+			</nav>
+		{{/if}}
+	</div>
+</section>

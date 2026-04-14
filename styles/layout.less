@@ -15,3 +15,60 @@ body {
     width: min(1120px, 90vw);
     margin: 0 auto;
 }
+
+.page-hero {
+    position: relative;
+    overflow: hidden;
+    color: @white;
+    background:
+        linear-gradient(120deg, fade(@header-bg, 92%), fade(@header-bg, 70%)),
+        radial-gradient(circle at 80% 20%, fade(@accent-color, 36%), transparent 52%),
+        radial-gradient(circle at 15% 90%, fade(@white, 10%), transparent 45%);
+}
+
+.page-hero-inner {
+    padding: clamp(4rem, 8vw, 7.5rem) 0 clamp(3rem, 6vw, 5.5rem);
+}
+
+.page-hero-title {
+    margin: 0;
+    font-size: clamp(2rem, 5.8vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.page-hero-subtitle {
+    max-width: 62ch;
+    margin-top: 1rem;
+    color: fade(@white, 88%);
+    font-size: clamp(1rem, 2.1vw, 1.25rem);
+}
+
+.page-hero-breadcrumbs {
+    display: flex;
+    gap: 0.55rem;
+    margin-top: 1.35rem;
+    color: fade(@white, 78%);
+    font-size: 0.9rem;
+}
+
+.page-hero-breadcrumbs a {
+    color: @white;
+    text-underline-offset: 0.14em;
+}
+
+@media (max-width: @mobile) {
+    .page-hero-inner {
+        padding-top: 3.25rem;
+        padding-bottom: 2.8rem;
+    }
+
+    .page-hero-subtitle {
+        margin-top: 0.8rem;
+    }
+
+    .page-hero-breadcrumbs {
+        flex-wrap: wrap;
+        row-gap: 0.3rem;
+    }
+}
