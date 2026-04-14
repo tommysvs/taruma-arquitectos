@@ -1,4 +1,6 @@
 import indexPageData from './pages/indexpage';
+import projectsPageData from './pages/projectspage.js';
+import galleryPageData from './pages/gallerypage.js';
 
 const baseHero = {
     heroShowBreadcrumbs: true
@@ -35,6 +37,7 @@ const pageData = {
         ...baseHero
     },
     '/projects.html': {
+        ...projectsPageData,
         isProjects: true,
         heroTitle: 'Proyectos destacados',
         heroSubtitle: 'Una selección de obras representativas de nuestra práctica.',
@@ -42,6 +45,7 @@ const pageData = {
         ...baseHero
     },
     '/gallery.html': {
+        ...galleryPageData,
         isGallery: true,
         heroTitle: 'Galería',
         heroSubtitle: 'Imágenes de espacios que reflejan detalle, identidad y calidad.',
