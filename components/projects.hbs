@@ -1,0 +1,51 @@
+<main id="main-content">
+    <section class="projects-hero">
+        <div class="container">
+            <h1 class="projects-hero__title">Proyectos Más Destacados</h1>
+            <p class="projects-hero__subtitle">Obras que reflejan nuestra visión de la arquitectura funcional y estética</p>
+        </div>
+    </section>
+
+    <section class="projects-list" aria-label="Lista de proyectos destacados">
+        <div class="container">
+            {{#each proyectos}}
+            <article class="proyecto" aria-label="Proyecto: {{titulo}}">
+                <div class="proyecto__info">
+                    <h2 class="proyecto__titulo">
+                        {{titulo}}
+                        <span class="proyecto__ano">({{ano}})</span>
+                    </h2>
+                    <p class="proyecto__descripcion">{{descripcion}}</p>
+                </div>
+
+                <div class="carousel" data-project-carousel>
+                    <div class="carousel__track" role="list" aria-label="Imágenes de {{titulo}}">
+                        {{#each imagenes}}
+                        <figure class="carousel__slide" role="listitem">
+                            <img
+                                src="../assets/img/{{src}}"
+                                alt="{{alt}}"
+                                loading="lazy"
+                            >
+                        </figure>
+                        {{/each}}
+                    </div>
+
+                    <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior de {{../titulo}}">
+                        &#10216;
+                    </button>
+                    <button class="carousel__btn carousel__btn--next" type="button" aria-label="Siguiente imagen de {{../titulo}}">
+                        &#10217;
+                    </button>
+
+                    <div class="carousel__dots" aria-hidden="true">
+                        {{#each imagenes}}
+                        <span class="carousel__dot{{#if @first}} carousel__dot--active{{/if}}"></span>
+                        {{/each}}
+                    </div>
+                </div>
+            </article>
+            {{/each}}
+        </div>
+    </section>
+</main>
