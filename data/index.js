@@ -22,6 +22,7 @@ const pageData = {
     },
     '/portfolio.html': {
         ...portfolioPageData,
+        isPortfolio: true,
         ...baseHero
     },
     '/processes.html': {
