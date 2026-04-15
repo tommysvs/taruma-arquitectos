@@ -12,8 +12,8 @@ export default {
             service: 'diseño',
             location: 'Honduras',
             images: [
-                { src: '../assets/img/serrano.jpg', alt: 'Plaza Serrano' },
-                { src: '../assets/img/Serrano3.jpg', alt: 'Plaza Serrano' }
+                { src: './assets/img/serrano.jpg', alt: 'Plaza Serrano' },
+                { src: './assets/img/Serrano3.jpg', alt: 'Plaza Serrano' }
             ]
         },
         {
@@ -23,8 +23,8 @@ export default {
             service: 'construcción',
             location: 'San Pedro Sula',
             images: [
-                { src: '../assets/img/Complejo Turistico Colonial1.png', alt: 'Complejo Turistico colonial' },
-                { src: '../assets/img/Complejo Turistico Colonial2.png', alt: 'Complejo Turistico colonial' }
+                { src: './assets/img/Complejo Turistico Colonial1.png', alt: 'Complejo Turistico colonial' },
+                { src: './assets/img/Complejo Turistico Colonial2.png', alt: 'Complejo Turistico colonial' }
             ]
         },
         {
@@ -34,8 +34,8 @@ export default {
             service: 'remodelación',
             location: 'La Ceiba',
             images: [
-                { src: '../assets/img/Complejo Habitacional Lipidario2.png', alt: 'Complejo Habitacional' },
-                { src: '../assets/img/Complejo Habitacional Lipidario1.png', alt: 'Complejo Habitacional' }
+                { src: './assets/img/Complejo Habitacional Lipidario2.png', alt: 'Complejo Habitacional' },
+                { src: './assets/img/Complejo Habitacional Lipidario1.png', alt: 'Complejo Habitacional' }
             ]
         },
         {
@@ -45,8 +45,8 @@ export default {
             service: 'interiorismo',
             location: 'Tegucigalpa',
             images: [
-                { src: '../assets/img/Pizza Nostra1.png', alt: 'centro comercial' },
-                { src: '../assets/img/Pizza Nostra2.png', alt: 'centro comercial' }
+                { src: './assets/img/Pizza Nostra1.png', alt: 'centro comercial' },
+                { src: './assets/img/Pizza Nostra2.png', alt: 'centro comercial' }
             ]
         },
         {
@@ -56,8 +56,8 @@ export default {
             service: 'planificación',
             location: 'Choluteca',
             images: [
-                { src: '../assets/img/Cabañas The Rubra1.png', alt: 'urbanizacion Rubra' },
-                { src: '../assets/img/Cabañas The Rubra3.png', alt: 'urbanizacion Rubra' }
+                { src: './assets/img/Cabañas The Rubra1.png', alt: 'urbanizacion Rubra' },
+                { src: './assets/img/Cabañas The Rubra3.png', alt: 'urbanizacion Rubra' }
             ]
         },
         {
@@ -67,8 +67,8 @@ export default {
             service: 'construcción',
             location: 'San Pedro Sula',
             images: [
-                { src: '../assets/img/ViviendaModular1.jpg', alt: 'ViviendaModular' },
-                { src: '../assets/img/ViviendaModular2.jpg', alt: 'ViviendaModular' }
+                { src: './assets/img/ViviendaModular1.jpg', alt: 'ViviendaModular' },
+                { src: './assets/img/ViviendaModular2.jpg', alt: 'ViviendaModular' }
             ]
         },
         {
@@ -78,8 +78,8 @@ export default {
             service: 'remodelación',
             location: 'Choloma',
             images: [
-                { src: '../assets/img/Tecnicentro3.jpg', alt: 'Tecnicentro' },
-                { src: '../assets/img/Tecnicentro2.jpg', alt: 'Tecnicentro' }
+                { src: './assets/img/Tecnicentro3.jpg', alt: 'Tecnicentro' },
+                { src: './assets/img/Tecnicentro2.jpg', alt: 'Tecnicentro' }
             ]
         },
         {
@@ -89,8 +89,8 @@ export default {
             service: 'planificación',
             location: 'Tegucigalpa',
             images: [
-                { src: '../assets/img/bode1.jpg', alt: 'Bodejas' },
-                { src: '../assets/img/bode2.jpg', alt: 'Bodejas' }
+                { src: './assets/img/bode1.jpg', alt: 'Bodejas' },
+                { src: './assets/img/bode2.jpg', alt: 'Bodejas' }
             ]
         },
         {

@@ -5,13 +5,13 @@ export default {
 		title: 'Proyectos destacados',
 		carouselAriaLabel: 'Paginacion del carrusel',
 		slides: [
-			{ src: '../assets/img/proyecto1.jpg', alt: 'Plaza Serrano' },
-			{ src: '../assets/img/proyecto2.jpg', alt: 'Proyecto 2' },
-			{ src: '../assets/img/proyecto3.jpg', alt: 'Cafeteria' },
-			{ src: '../assets/img/Cabañas The Rubra4.png', alt: 'Cabañas the Rubra' },
-			{ src: '../assets/img/Complejo Deportivo1.png', alt: 'Complejo Deportivo' },
-			{ src: '../assets/img/Complejo Habitacional Lipidario2.png', alt: 'Complejo Habitacional Lipidario' },
-			{ src: '../assets/img/Complejo Turistico Colonial1.png', alt: 'Complejo Turistico Colonial' }
+			{ src: './assets/img/proyecto1.jpg', alt: 'Plaza Serrano' },
+			{ src: './assets/img/proyecto2.jpg', alt: 'Proyecto 2' },
+			{ src: './assets/img/proyecto3.jpg', alt: 'Cafeteria' },
+			{ src: './assets/img/Cabañas The Rubra4.png', alt: 'Cabañas the Rubra' },
+			{ src: './assets/img/Complejo Deportivo1.png', alt: 'Complejo Deportivo' },
+			{ src: './assets/img/Complejo Habitacional Lipidario2.png', alt: 'Complejo Habitacional Lipidario' },
+			{ src: './assets/img/Complejo Turistico Colonial1.png', alt: 'Complejo Turistico Colonial' }
 		]
 	},
 	homeAbout: {
