@@ -1,6 +1,5 @@
 @import "variables.less";
 
-// Grid de proyectos
 .grid-proyectos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -13,12 +12,7 @@
     padding: 25px;
     border-radius: @border-radius-lg;
     box-shadow: 0 5px 18px rgba(0,0,0,0.15);
-    transition: transform @transition, box-shadow @transition;
-
-    &:hover {
-        transform: translateY(-8px);
-        box-shadow: @shadow;
-    }
+    border-top: 4px solid @accent-color;
 
     h3 {
         font-size: 1.3rem;
