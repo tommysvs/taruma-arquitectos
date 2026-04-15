@@ -29,17 +29,16 @@ El portal esta planteado como un sitio multipagina con secciones principales:
 - Vite
 - Handlebars (partials y contexto por pagina)
 - Less
-- Vue 3 (base inicial disponible en src)
 - Node.js y npm para entorno de desarrollo
 
 Dependencias relevantes declaradas en el proyecto:
 
 - vite
-- @vitejs/plugin-vue
 - vite-plugin-handlebars
 - vite-plugin-purgecss
 - less
 - glob
+- purgecss
 
 ## Requisitos previos
 - Node.js 18 o superior recomendado.
