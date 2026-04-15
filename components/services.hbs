@@ -1,37 +1,13 @@
 <section class="section">
-    <h3>Servicios principales</h3>
+    <h3>{{servicesTitle}}</h3>
 
     <div class="services-grid">
-
-        <div class="service-card">
-            <h4>Diseño arquitectónico</h4>
-            <p>Desarrollo de conceptos, diseño inicial y propuestas arquitectónicas funcionales.</p>
-        </div>
-
-        <div class="service-card">
-            <h4>Gestión de proyectos</h4>
-            <p>Coordinación completa del proyecto: tiempos, costos, contratistas y planificación.</p>
-        </div>
-
-        <div class="service-card">
-            <h4>Planeación y urbanismo</h4>
-            <p>Planes maestros, análisis urbano y estrategias de crecimiento.</p>
-        </div>
-
-        <div class="service-card">
-            <h4>Interiorismo y remodelación</h4>
-            <p>Diseño interior moderno, renovaciones y optimización de espacios.</p>
-        </div>
-
-        <div class="service-card">
-            <h4>Consultorías y asesorías</h4>
-            <p>Evaluación profesional y asesoramiento especializado en arquitectura.</p>
-        </div>
-
-        <div class="service-card">
-            <h4>Construcción y ejecución</h4>
-            <p>Supervisión de obra, calidad de materiales y ejecución eficiente.</p>
-        </div>
+        {{#each services}}
+            <div class="service-card">
+                <h4>{{title}}</h4>
+                <p>{{description}}</p>
+            </div>
+        {{/each}}
 
     </div>
 </section>

@@ -1,68 +1,68 @@
 <section class="quot-section alt">
     <div class="container">
       <div class="form-page">
-        <h1>Solicita tu cotización</h1>
-        <p class="lead">Completa el formulario y recibe una respuesta personalizada.</p>
+        <h1>{{quotationForm.title}}</h1>
+        <p class="lead">{{quotationForm.lead}}</p>
 
         <form class="cotizacion-form" @submit.prevent="submitQuotation" novalidate>
           <div class="row">
-            <label for="tipo">Tipo de proyecto</label>
+            <label for="tipo">{{quotationForm.labels.projectType}}</label>
             <select id="tipo" v-model="form.projectType" required>
-              <option value="">Selecciona...</option>
-              <option value="casa">Casa</option>
-              <option value="edificio">Edificio</option>
-              <option value="remodelacion">Remodelación</option>
+              <option value="">{{quotationForm.projectTypeDefaultLabel}}</option>
+              {{#each quotationForm.projectTypeOptions}}
+                <option value="{{value}}">{{label}}</option>
+              {{/each}}
             </select>
             <span class="input-error" v-if="errors.projectType">{{ errors.projectType }}</span>
           </div>
 
           <div class="row two-col">
             <div>
-              <label for="superficie">Superficie aproximada (m²)</label>
-              <input type="number" id="superficie" v-model.number="form.area" placeholder="Ej: 120" min="1" required>
+              <label for="superficie">{{quotationForm.labels.area}}</label>
+              <input type="number" id="superficie" v-model.number="form.area" placeholder="{{quotationForm.placeholders.area}}" min="1" required>
               <span class="input-error" v-if="errors.area">{{ errors.area }}</span>
             </div>
             <div>
-              <label for="presupuesto">Presupuesto estimado</label>
-              <input type="text" id="presupuesto" v-model="form.budget" placeholder="Ej: L50,000" required>
+              <label for="presupuesto">{{quotationForm.labels.budget}}</label>
+              <input type="text" id="presupuesto" v-model="form.budget" placeholder="{{quotationForm.placeholders.budget}}" required>
               <span class="input-error" v-if="errors.budget">{{ errors.budget }}</span>
             </div>
           </div>
 
           <div class="row">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" v-model="form.email" placeholder="nombre@ejemplo.com" required>
+            <label for="email">{{quotationForm.labels.email}}</label>
+            <input type="email" id="email" v-model="form.email" placeholder="{{quotationForm.placeholders.email}}" required>
             <span class="input-error" v-if="errors.email">{{ errors.email }}</span>
-            <small class="field-note">Se usará para enviarte la confirmación de recepción y para recibir la cotización por este correo.</small>
+            <small class="field-note">{{quotationForm.notes.email}}</small>
           </div>
 
           <div class="row">
-            <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" v-model="form.phone" placeholder="+504 9876-5432" required>
+            <label for="phone">{{quotationForm.labels.phone}}</label>
+            <input type="tel" id="phone" v-model="form.phone" placeholder="{{quotationForm.placeholders.phone}}" required>
             <span class="input-error" v-if="errors.phone">{{ errors.phone }}</span>
           </div>
 
           <div class="row">
-            <label for="plazos">Plazos deseados</label>
-            <input type="text" id="plazos" v-model="form.deadline" placeholder="Ej: 6 meses" required>
+            <label for="plazos">{{quotationForm.labels.deadline}}</label>
+            <input type="text" id="plazos" v-model="form.deadline" placeholder="{{quotationForm.placeholders.deadline}}" required>
             <span class="input-error" v-if="errors.deadline">{{ errors.deadline }}</span>
           </div>
 
           <div class="row full-width">
-            <label for="description">Descripción del proyecto</label>
-            <textarea id="description" v-model="form.description" rows="5" placeholder="Indica el alcance, tipo de espacio y detalles relevantes." required></textarea>
+            <label for="description">{{quotationForm.labels.description}}</label>
+            <textarea id="description" v-model="form.description" rows="5" placeholder="{{quotationForm.placeholders.description}}" required></textarea>
             <span class="input-error" v-if="errors.description">{{ errors.description }}</span>
           </div>
 
           <div class="row file-field">
-            <label for="imagenes">Adjuntar imágenes del terreno / espacio</label>
+            <label for="imagenes">{{quotationForm.labels.files}}</label>
             <input type="file" id="imagenes" multiple accept="image/*" @change="handleFiles">
-            <small class="field-note">Nota: en este demo los archivos NO se adjuntan al correo. Adjúntalos manualmente si los necesitas.</small>
+            <small class="field-note">{{quotationForm.notes.files}}</small>
           </div>
 
           <div class="row actions">
-            <button type="submit" class="submit-btn">Enviar Cotización</button>
-            <a href="index.html" class="btn-outline">Volver al inicio</a>
+            <button type="submit" class="submit-btn">{{quotationForm.submitLabel}}</button>
+            <a href="index.html" class="btn-outline">{{quotationForm.backToHomeLabel}}</a>
           </div>
 
           <p class="status-message" v-if="status">{{ status }}</p>
@@ -73,22 +73,22 @@
 
   <section class="quot-section">
     <div class="container">
-      <h3>Proceso posterior al envío</h3>
-      <p>Una vez recibido tu formulario, nuestro equipo revisará la información y se pondrá en contacto contigo en un plazo máximo de 48 horas hábiles.</p>
-      <p>Se agendará una reunión inicial para definir detalles, requisitos y posibles ajustes del proyecto.</p>
+      {{#each quotationInfoSections}}
+        <h3>{{title}}</h3>
 
-      <h3>Tiempos de respuesta</h3>
-      <ul>
-        <li>Confirmación de recepción: Inmediata</li>
-        <li>Contacto del arquitecto responsable: Máximo 48 horas hábiles</li>
-        <li>Entrega de cotización preliminar: 5 días hábiles</li>
-      </ul>
+        {{#if paragraphs}}
+          {{#each paragraphs}}
+            <p>{{this}}</p>
+          {{/each}}
+        {{/if}}
 
-      <h3>Requisitos previos</h3>
-      <ul>
-        <li>Medidas aproximadas del terreno / espacio</li>
-        <li>Documentación de propiedad (si aplica)</li>
-        <li>Referencias o ideas de diseño (opcional)</li>
-      </ul>
+        {{#if list}}
+          <ul>
+            {{#each list}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      {{/each}}
     </div>
   </section>

@@ -1,97 +1,56 @@
 <section class="quienes-somos">
-  <div class="intro">
-    <h3>Nuestra historia</h3>
+    <div class="intro">
+        <h3>{{aboutIntro.title}}</h3>
 
-    <p>
-      TARUMA ARQUITECTOS es un despacho especializado en diseño arquitectónico,
-      planeación y desarrollo de proyectos integrales en Honduras. Nuestro enfoque
-      combina funcionalidad, estética y sostenibilidad para transformar ideas en
-      espacios de alto valor para quienes los habitan y disfrutan.
-    </p>
-
-    <p>
-      Desde nuestra fundación, hemos crecido a través de la innovación y la calidad,
-      trabajando en proyectos residenciales, comerciales, urbanos y corporativos.
-      Cada proyecto representa nuestro compromiso con el entorno, la identidad del lugar
-      y las necesidades específicas de cada cliente.
-    </p>
-  </div>
-
-  <div class="mision-vision">
-    <div class="card">
-      <h3>Misión</h3>
-      <p>
-        Diseñar espacios innovadores, funcionales y sostenibles que respondan de manera
-        integral a las necesidades de nuestros clientes, elevando su calidad de vida y
-        generando un impacto positivo en el entorno.
-      </p>
+        {{#each aboutIntro.paragraphs}}
+            <p>{{this}}</p>
+        {{/each}}
     </div>
 
-    <div class="card">
-      <h3>Visión</h3>
-      <p>
-        Ser un referente en arquitectura, transformando ideas en espacios funcionales
-        y sostenibles con un impacto positivo en la sociedad y el medio ambiente.
-      </p>
+    <div class="mision-vision">
+        {{#each missionVision}}
+            <div class="card">
+                <h3>{{title}}</h3>
+                <p>{{text}}</p>
+            </div>
+        {{/each}}
     </div>
-  </div>
 
-  <section class="valores">
-    <h3>Nuestros Valores</h3>
+    <section class="valores">
+        <h3>{{valuesTitle}}</h3>
 
-    <div class="valores-grid">
-      <div class="valor">
-        <h4>Innovación</h4>
-        <p>Buscamos soluciones creativas y actuales en cada proyecto.</p>
-      </div>
+        <div class="valores-grid">
+            {{#each values}}
+                <div class="valor">
+                    <h4>{{title}}</h4>
+                    <p>{{text}}</p>
+                </div>
+            {{/each}}
+        </div>
+    </section>
 
-      <div class="valor">
-        <h4>Sostenibilidad</h4>
-        <p>Aplicamos criterios ambientales, energéticos y responsables.</p>
-      </div>
+    <section class="equipo">
+        <h3>{{teamTitle}}</h3>
+        <p>
+            {{teamIntro}}
+        </p>
 
-      <div class="valor">
-        <h4>Calidad</h4>
-        <p>Garantizamos estándares profesionales en diseño y ejecución.</p>
-      </div>
+        <div class="equipo-grid">
+            {{#each teamMembers}}
+                <div class="miembro">
+                    <img src="{{image}}" alt="{{alt}}">
+                    <h4>{{name}}</h4>
+                    <span>{{role}}</span>
+                </div>
+            {{/each}}
 
-      <div class="valor">
-        <h4>Compromiso</h4>
-        <p>Escuchamos, acompañamos y trabajamos de la mano con cada cliente.</p>
-      </div>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <section class="equipo">
-    <h3>Nuestro Equipo</h3>
-    <p>
-      Nuestro equipo está conformado por arquitectos y profesionales multidisciplinarios
-      que trabajan con dedicación y pasión por el diseño.
-    </p>
-
-    <div class="equipo-grid">
-      <div class="miembro">
-        <img src="../assets/img/Osmar.jpeg" alt="Arquitecto Principal">
-        <h4>Osman Alejandro Martinez Molina </h4>
-        <span>Arquitecto Principal</span>
-      </div>
-
-      <div class="miembro">
-        <img src="../assets/img/reyes.jpeg" alt="Arquitecto Diseñador">
-        <h4>Leily Michelle Reyes Rosales</h4>
-        <span>Diseñadora Arquitectónico</span>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="filosofia">
-    <h3>Nuestra filosofía de trabajo</h3>
-    <p>
-      Entendemos la arquitectura como un proceso integral que une creatividad,
-      funcionalidad y responsabilidad ambiental. Diseñamos espacios coherentes con su
-      entorno, eficientes en su distribución y capaces de generar una experiencia
-      significativa para el usuario final.
-    </p>
-  </section>
+    <section class="filosofia">
+        <h3>{{philosophyTitle}}</h3>
+        <p>
+            {{philosophyText}}
+        </p>
+    </section>
 </section>

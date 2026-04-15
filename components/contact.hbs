@@ -1,53 +1,51 @@
 <div class="contact-layout">
     <div class="info-box">
-        <h2>Información de Contacto</h2>
-        <p><strong>Dirección:</strong> Tegucigalpa, Honduras</p>
-        <p><strong>Teléfonos:</strong> +504 2233-4455 / +504 9876-1122</p>
-        <p><strong>Email:</strong> contacto@tarumaarquitectos.com</p>
-        <p><strong>Redes Sociales:</strong> Facebook | Instagram | LinkedIn</p>
-        <p><strong>Horarios:</strong> L–V 8:00 AM – 5:00 PM | Sáb 8:00 AM – 12:00 M</p>
+        <h2>{{contactInfoTitle}}</h2>
+        {{#each contactInfoItems}}
+            <p><strong>{{label}}</strong> {{value}}</p>
+        {{/each}}
     </div>
 
     <div class="form-box">
-        <h2>Formulario de Contacto</h2>
+        <h2>{{contactFormTitle}}</h2>
 
         <form class="contact-form" @submit.prevent="submitContact" novalidate>
             <label class="contact-label">
-                Nombre Completo
-                <input class="contact-input" type="text" v-model="form.name" placeholder="Nombre Completo" required>
+                {{contactFormLabels.fullName}}
+                <input class="contact-input" type="text" v-model="form.name" placeholder="{{contactFormPlaceholders.fullName}}" required>
                 <span class="input-error" v-if="errors.name">{{ errors.name }}</span>
             </label>
 
             <label class="contact-label">
-                Correo Electrónico
-                <input class="contact-input" type="email" v-model="form.email" placeholder="Correo Electrónico" required>
+                {{contactFormLabels.email}}
+                <input class="contact-input" type="email" v-model="form.email" placeholder="{{contactFormPlaceholders.email}}" required>
                 <span class="input-error" v-if="errors.email">{{ errors.email }}</span>
             </label>
 
             <label class="contact-label">
-                Número de Teléfono
-                <input class="contact-input" type="tel" v-model="form.phone" placeholder="Número de Teléfono" required>
+                {{contactFormLabels.phone}}
+                <input class="contact-input" type="tel" v-model="form.phone" placeholder="{{contactFormPlaceholders.phone}}" required>
                 <span class="input-error" v-if="errors.phone">{{ errors.phone }}</span>
             </label>
 
             <label class="contact-label">
-                Motivo de contacto
+                {{contactFormLabels.reason}}
                 <select class="contact-select" v-model="form.reason" required>
-                    <option value="">Seleccione una opción</option>
-                    <option value="cotizacion">Solicitar Cotización</option>
-                    <option value="servicios">Consulta sobre Servicios</option>
-                    <option value="cita">Agendar Cita</option>
+                    <option value="">{{contactReasonDefaultLabel}}</option>
+                    {{#each contactReasonOptions}}
+                        <option value="{{value}}">{{label}}</option>
+                    {{/each}}
                 </select>
                 <span class="input-error" v-if="errors.reason">{{ errors.reason }}</span>
             </label>
 
             <label class="contact-label">
-                Mensaje
-                <textarea class="contact-textarea" rows="5" v-model="form.message" placeholder="Escriba su mensaje..." required></textarea>
+                {{contactFormLabels.message}}
+                <textarea class="contact-textarea" rows="5" v-model="form.message" placeholder="{{contactFormPlaceholders.message}}" required></textarea>
                 <span class="input-error" v-if="errors.message">{{ errors.message }}</span>
             </label>
 
-            <button class="contact-button" type="submit">Enviar</button>
+            <button class="contact-button" type="submit">{{contactSubmitLabel}}</button>
             <p class="status-message" v-if="status">{{ status }}</p>
         </form>
     </div>
@@ -55,8 +53,8 @@
 </div>
 
 <div class="contact-location-box info-box">
-    <h2>Ubicación</h2>
+    <h2>{{contactLocationTitle}}</h2>
     <iframe class="contact-map"
-        src="https://maps.google.com/maps?q=Tegucigalpa&t=&z=13&ie=UTF8&iwloc=&output=embed">
+        src="{{contactMapSrc}}">
     </iframe>
 </div>

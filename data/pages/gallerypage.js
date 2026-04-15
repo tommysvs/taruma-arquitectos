@@ -1,10 +1,13 @@
 export default {
     isGallery: true,
-    categorias: [
+    heroTitle: 'Galería',
+    heroSubtitle: 'Imágenes de espacios que reflejan detalle, identidad y calidad.',
+    heroBreadcrumbLabel: 'Galería',
+    categories: [
         {
-            nombre: "Restaurante",
+            name: "Restaurante",
             id: "restaurante",
-            imagenes: [
+            images: [
                 { src: "Restaurante1.jpg", alt: "Fachada exterior del Restaurante" },
                 { src: "Restaurante2.jpg", alt: "Área de comedor del Restaurante" },
                 { src: "Restaurante3.jpg", alt: "Zona de parrilla del Restaurante" },
@@ -12,9 +15,9 @@ export default {
             ]
         },
         {
-            nombre: "Vivienda Unifamiliar",
+            name: "Vivienda Unifamiliar",
             id: "vivienda-unifamiliar",
-            imagenes: [
+            images: [
                 { src: "ViviendaU1.jpg", alt: "Fachada principal de Vivienda Unifamiliar" },
                 { src: "ViviendaU2.jpg", alt: "Vista lateral de Vivienda Unifamiliar" },
                 { src: "ViviendaU3.jpg", alt: "Área social de Vivienda Unifamiliar" },
@@ -24,9 +27,9 @@ export default {
             ]
         },
         {
-            nombre: "Plaza Valterra",
+            name: "Plaza Valterra",
             id: "plaza-valterra",
-            imagenes: [
+            images: [
                 { src: "Valterra1.jpg", alt: "Vista general de la Plaza Valterra" },
                 { src: "Valterra2.jpg", alt: "Fachada principal de la Plaza Valterra" },
                 { src: "Valterra3.jpg", alt: "Locales comerciales de la Plaza Valterra" },
@@ -37,18 +40,18 @@ export default {
             ]
         },
         {
-            nombre: "Apartamentos",
+            name: "Apartamentos",
             id: "apartamentos",
-            imagenes: [
+            images: [
                 { src: "Apetamentos1.jpg", alt: "Sala de estar de los Apartamentos TARUMA" },
                 { src: "Apetamentos2.jpg", alt: "Dormitorio principal de los Apartamentos TARUMA" },
                 { src: "Apetamentos3.jpg", alt: "Cocina integrada de los Apartamentos TARUMA" }
             ]
         },
         {
-            nombre: "Modelo de Vivienda",
+            name: "Modelo de Vivienda",
             id: "modelo-vivienda",
-            imagenes: [
+            images: [
                 { src: "ModeloVicienda1.jpg", alt: "Fachada del Modelo de Vivienda TARUMA" },
                 { src: "ModeloVicienda2.jpg", alt: "Sala del Modelo de Vivienda TARUMA" },
                 { src: "ModeloVicienda3.jpg", alt: "Comedor del Modelo de Vivienda TARUMA" },
@@ -58,25 +61,25 @@ export default {
             ]
         },
         {
-            nombre: "Piscina",
+            name: "Piscina",
             id: "piscina",
-            imagenes: [
+            images: [
                 { src: "Picsina.jpg", alt: "Diseño de piscina residencial con área de descanso y jardín" }
             ]
         },
         {
-            nombre: "Plaza Serrano",
+            name: "Plaza Serrano",
             id: "plaza-serrano",
-            imagenes: [
+            images: [
                 { src: "serrano.jpg", alt: "Vista frontal de la Plaza Serrano" },
                 { src: "Serrano2.jpg", alt: "Interior comercial de la Plaza Serrano" },
                 { src: "Serrano3.jpg", alt: "Área de estacionamiento de la Plaza Serrano" }
             ]
         },
         {
-            nombre: "Tecnicentro Zamora",
+            name: "Tecnicentro Zamora",
             id: "tecnicentro-zamora",
-            imagenes: [
+            images: [
                 { src: "Tecnicentro1.jpg", alt: "Fachada principal del Tecnicentro Zamora" },
                 { src: "Tecnicentro2.jpg", alt: "Área de servicio técnico del Tecnicentro Zamora" },
                 { src: "Tecnicentro3.jpg", alt: "Interior del taller del Tecnicentro Zamora" },
@@ -85,9 +88,9 @@ export default {
             ]
         },
         {
-            nombre: "Vivienda Modular",
+            name: "Vivienda Modular",
             id: "vivienda-modular",
-            imagenes: [
+            images: [
                 { src: "ViviendaModular1.jpg", alt: "Módulo principal de la Vivienda Modular" },
                 { src: "ViviendaModular2.jpg", alt: "Ensamblaje de módulos de la Vivienda Modular" },
                 { src: "ViviendaModular3.jpg", alt: "Vista interior de la Vivienda Modular" },
@@ -102,9 +105,9 @@ export default {
             ]
         },
         {
-            nombre: "Vivienda San Jerónimo",
+            name: "Vivienda San Jerónimo",
             id: "vivienda-san-jeronimo",
-            imagenes: [
+            images: [
                 { src: "ViviendaSanJeronimo1.jpg", alt: "Fachada principal de la Vivienda San Jerónimo" },
                 { src: "ViviendaSanJeronimo2.jpg", alt: "Sala de estar de la Vivienda San Jerónimo" },
                 { src: "ViviendaSanJeronimo3.jpg", alt: "Comedor de la Vivienda San Jerónimo" },

@@ -1,64 +1,33 @@
 <section class="section">
-    <h3>Nuestras etapas</h3>
+    <h3>{{processTitle}}</h3>
 
     <div class="process-grid">
-
-        <div class="process-card">
-            <h4>Etapa conceptual</h4>
-            <p>Análisis inicial, ideas generales y primeros bocetos.</p>
-        </div>
-
-        <div class="process-card">
-            <h4>Desarrollo de diseño</h4>
-            <p>Planos, maquetas digitales y renders.</p>
-        </div>
-
-        <div class="process-card">
-            <h4>Proyecto ejecutivo</h4>
-            <p>Documentación técnica y permisos.</p>
-        </div>
-
-        <div class="process-card">
-            <h4>Construcción</h4>
-            <p>Supervisión, ejecución y entrega final.</p>
-        </div>
+        {{#each processCards}}
+            <div class="process-card">
+                <h4>{{title}}</h4>
+                <p>{{description}}</p>
+            </div>
+        {{/each}}
 
     </div>
 
     <div class="process-diagram">
+        {{#each processSteps}}
+            <div class="step">
+                <span class="circle">{{number}}</span>
+                <p>{{label}}</p>
+            </div>
 
-        <div class="step">
-            <span class="circle">1</span>
-            <p>Etapa conceptual</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="step">
-            <span class="circle">2</span>
-            <p>Desarrollo de diseño</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="step">
-            <span class="circle">3</span>
-            <p>Proyecto ejecutivo</p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="step">
-            <span class="circle">4</span>
-            <p>Construcción</p>
-        </div>
+            {{#unless @last}}
+                <div class="line"></div>
+            {{/unless}}
+        {{/each}}
 
     </div>
 
     <ul class="times-list">
-        <li>Etapa conceptual: 1–2 semanas</li>
-        <li>Desarrollo de diseño: 3–6 semanas</li>
-        <li>Proyecto ejecutivo: 3–5 semanas</li>
-        <li>Construcción: depende del proyecto</li>
+        {{#each timeList}}
+            <li>{{stage}}: {{duration}}</li>
+        {{/each}}
     </ul>
 </section>

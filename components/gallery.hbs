@@ -1,11 +1,11 @@
 <main id="main-content">
     <section class="gallery-section" aria-label="Galería de fotos por categoría">
         <div class="container">
-            {{#each categorias}}
+            {{#each categories}}
             <div class="gallery-categoria" id="{{id}}">
-                <h2 class="gallery-categoria__titulo">{{nombre}}</h2>
+                <h2 class="gallery-categoria__titulo">{{name}}</h2>
                 <div class="gallery-grid" role="list">
-                    {{#each imagenes}}
+                    {{#each images}}
                     <figure
                         class="img-card"
                         role="listitem"

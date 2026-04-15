@@ -1,19 +1,19 @@
 <main id="main-content">
     <section class="projects-list" aria-label="Lista de proyectos destacados">
         <div class="container">
-            {{#each proyectos}}
-            <article class="proyecto" aria-label="Proyecto: {{titulo}}">
+            {{#each projects}}
+            <article class="proyecto" aria-label="Proyecto: {{title}}">
                 <div class="proyecto__info">
                     <h2 class="proyecto__titulo">
-                        {{titulo}}
-                        <span class="proyecto__ano">({{ano}})</span>
+                        {{title}}
+                        <span class="proyecto__ano">({{year}})</span>
                     </h2>
-                    <p class="proyecto__descripcion">{{descripcion}}</p>
+                    <p class="proyecto__descripcion">{{description}}</p>
                 </div>
 
                 <div class="carousel" data-project-carousel>
-                    <div class="carousel__track" role="list" aria-label="Imágenes de {{titulo}}">
-                        {{#each imagenes}}
+                    <div class="carousel__track" role="list" aria-label="Imágenes de {{title}}">
+                        {{#each images}}
                         <figure class="carousel__slide" role="listitem">
                             <img
                                 src="../assets/img/{{src}}"
@@ -24,15 +24,15 @@
                         {{/each}}
                     </div>
 
-                    <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior de {{../titulo}}">
+                    <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior de {{../title}}">
                         &#10216;
                     </button>
-                    <button class="carousel__btn carousel__btn--next" type="button" aria-label="Siguiente imagen de {{../titulo}}">
+                    <button class="carousel__btn carousel__btn--next" type="button" aria-label="Siguiente imagen de {{../title}}">
                         &#10217;
                     </button>
 
                     <div class="carousel__dots" aria-hidden="true">
-                        {{#each imagenes}}
+                        {{#each images}}
                         <span class="carousel__dot{{#if @first}} carousel__dot--active{{/if}}"></span>
                         {{/each}}
                     </div>

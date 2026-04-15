@@ -1,68 +1,57 @@
 <section class="home-hero">
     <div class="home-hero-content container">
-        <h2>Despacho especializado en diseño arquitectónico</h2>
+        <h2>{{homeHeroTitle}}</h2>
     </div>
 </section>
 
 <section id="proyectos" class="home-section alt">
     <div class="container">
-        <h3>Proyectos destacados</h3>
+        <h3>{{featuredProjects.title}}</h3>
         <div class="custom-carousel" data-carousel data-autoplay="3400">
             <div class="carousel-viewport">
                 <div class="carousel-track">
-                    <div class="carousel-slide"><img src="../assets/img/proyecto1.jpg" alt="Plaza Serrano" /></div>
-                    <div class="carousel-slide"><img src="../assets/img/proyecto2.jpg" alt="Proyecto 2" /></div>
-                    <div class="carousel-slide"><img src="../assets/img/proyecto3.jpg" alt="Cafeteria" /></div>
-                    <div class="carousel-slide"><img src="../assets/img/Cabañas The Rubra4.png" alt="Cabañas the Rubra" /></div>
-                    <div class="carousel-slide"><img src="../assets/img/Complejo Deportivo1.png" alt="Complejo Deportivo" /></div>
-                    <div class="carousel-slide"><img src="../assets/img/Complejo Habitacional Lipidario2.png" alt="Complejo Habitacional Lipidario" /></div>
-                    <div class="carousel-slide"><img src="../assets/img/Complejo Turistico Colonial1.png" alt="Complejo Turistico Colonial" /></div>
+                    {{#each featuredProjects.slides}}
+                        <div class="carousel-slide"><img src="{{src}}" alt="{{alt}}" /></div>
+                    {{/each}}
                 </div>
             </div>
-            <div class="carousel-dots" aria-label="Paginacion del carrusel"></div>
+            <div class="carousel-dots" aria-label="{{featuredProjects.carouselAriaLabel}}"></div>
         </div>
     </div>
 </section>
 
 <section id="nosotros" class="home-section">
     <div class="container">
-        <h3>Quiénes Somos</h3>
+        <h3>{{homeAbout.title}}</h3>
         <div class="about-content">
-            <div class="about-card">
-                <h4>Nuestra Misión</h4>
-                <p>Somos un despacho de arquitectura comprometido con la excelencia en el diseño, la funcionalidad y la sostenibilidad. Nuestro enfoque combina creatividad, técnica y sensibilidad al entorno.</p>
-            </div>
-            <div class="about-card">
-                <h4>Nuestra Experiencia</h4>
-                <p>Con más de una década de experiencia, hemos desarrollado proyectos residenciales, comerciales y urbanos que reflejan nuestra pasión por la arquitectura contemporánea y responsable.</p>
-            </div>
-            <div class="about-card">
-                <h4>Nuestro Compromiso</h4>
-                <p>Nos dedicamos a transformar espacios en experiencias, con soluciones innovadoras que generan valor a nuestros clientes y contribuyen al desarrollo sostenible de las comunidades.</p>
-            </div>
+            {{#each homeAbout.cards}}
+                <div class="about-card">
+                    <h4>{{title}}</h4>
+                    <p>{{text}}</p>
+                </div>
+            {{/each}}
         </div>
     </div>
 </section>
 
 <section id="servicios" class="home-section alt">
     <div class="container">
-        <h3>Servicios principales</h3>
+        <h3>{{homeServices.title}}</h3>
         <div class="service-links">
-            <a href="services.html">Servicio de Diseño</a>
-            <a href="services.html">Construcción y Remodelación</a>
-            <a href="services.html">Planeación y Gestión de Proyectos</a>
-            <a href="services.html">Desarrollo Urbano y Paisajismo</a>
+            {{#each homeServices.links}}
+                <a href="{{href}}">{{label}}</a>
+            {{/each}}
         </div>
     </div>
 </section>
 
 <section id="noticias" class="home-section">
     <div class="container">
-        <h3>Noticias y Eventos</h3>
+        <h3>{{homeNews.title}}</h3>
         <ul class="news-list">
-            <li><strong>Enero 2025:</strong> Fundación Oficial de Taruma Arquitectos.</li>
-            <li><strong>Marzo 2025:</strong> Taruma Finaliza su Primer Proyecto.</li>
-            <li><strong>Diciembre 2025:</strong> Se busca la expansion de Taruma.</li>
+            {{#each homeNews.items}}
+                <li><strong>{{date}}</strong> {{text}}</li>
+            {{/each}}
         </ul>
     </div>
 </section>
