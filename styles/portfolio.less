@@ -1,0 +1,52 @@
+@import "variables.less";
+
+// Grid de proyectos
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 8%;
+}
+
+.proyecto {
+    background: @white;
+    padding: 25px;
+    border-radius: @border-radius-lg;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+    transition: transform @transition, box-shadow @transition;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: @shadow;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        color: #000;  
+    }
+
+    p {
+        font-size: 1rem;
+        color: @text-color;
+        margin: 4px 0;
+    }
+
+    .galeria {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+
+        img {
+            width: 49%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: @border-radius;
+            transition: transform @transition;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
