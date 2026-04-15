@@ -45,13 +45,13 @@ export default {
         {
             name: 'Osman Alejandro Martinez Molina',
             role: 'Arquitecto Principal',
-            image: '../assets/img/Osmar.jpeg',
+            src: './assets/img/Osmar.jpeg',
             alt: 'Arquitecto Principal'
         },
         {
             name: 'Leily Michelle Reyes Rosales',
             role: 'Diseñadora Arquitectónico',
-            image: '../assets/img/reyes.jpeg',
+            src: './assets/img/reyes.jpeg',
             alt: 'Arquitecto Diseñador'
         }
     ],
